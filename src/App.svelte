@@ -13,7 +13,7 @@
 </script>
 
 <!-- Estructura contenido HTML -->
-<!-- cantidad de tiempo de vida de la zanahoria o x% zanahorias podridas d -->
+<!-- cantidad de tiempo de vida de la zanahoria o x% zanahorias podridas doenfjwebfjbweflkdflsdn -->
 <input type="number" bind:value={x}>
 <div class="grid">
     {#each images as image}
