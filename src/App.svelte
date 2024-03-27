@@ -1,20 +1,20 @@
 <!-- Script JS -->
 <script>
     var x = 0;
-    //x = Math.round(x/10)
     // comente esto porque me arruinaba la vida
-    const images = []
+    var images = []
 
     function updateImages(){
-        if(x>100){ // este if lo agregue porque si no te mete tantas imagenes como quieras
+        if(x>100 || x<-100){ // este if lo agregue porque si no te mete tantas imagenes como quieras
             x=100 // esto limita el numero de imagenes a 10
         }
-        images.length = 0
-        for(let i =0;i<x;i++ ){
-            images.push("./images/podrida2.png")
+        images = []
+        
+        for(let i =0;i<Math.abs(Math.round(x/10));i++ ){
+            images.push("./images/podrida1.png")
         }
-        for(let i=0;i<100-x;i++){
-            images.push("./images/zanahoria2.jpg")
+        for(let i=0;i<10-Math.abs(Math.round(x/10));i++){
+            images.push("./images/zanahoria.webp")
         }
     }
     /*
@@ -26,14 +26,15 @@
     }
     */
     $: updateImages();
-    console.log(x)
 </script>
 
 <!-- Estructura contenido HTML -->
 <!-- cantidad de tiempo de vida de la zanahoria o x% zanahorias podridas doenfjwebfjbweflkdflsdn -->
-<h1>Cantidad de zanahorias podridas, por cada 10 que se encuentran en stock</h1>
-<h2>Ingrese el porcentaje de zanahorias podridas</h2>
+<div class="header">
+<h1>Cantidad de zanahorias podridas que se encuentran en stock</h1>
+<h2>Ingrese el porcentaje de zanahorias podridas:</h2>
 <input type="number" bind:value={x} on:input={updateImages}>
+</div>
 <div class="container">
   <div class="grid">
       {#each images as image}
@@ -44,24 +45,48 @@
 <!-- Estilos CSS -->
 <style> 
 
+input{
+    padding-top: 0px;
+    border-radius: 5px;
+    border: 1px solid #ccc; 
+    font-size: 16px;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px   20px ;
+    width: 1000px;
+    margin:auto;
+}
 .container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 100vh; /* El contenedor ocupa el 100% del viewport en altura */
+    height: 60vh; /* El contenedor ocupa el 100% del viewport en altura */
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(10, 0.05fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 0.01px;
-  grid-auto-rows: minmax(0.05, auto);
-  max-width: 100%;
-  width: 100%;
+  grid-auto-rows: minmax(2, auto);
   max-height: 90vh;
-  margin: 0 auto;
+    overflow: auto;
+    padding: 10px;  
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 img{
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 100px;;
+}
+h2{
+    padding-bottom: 50px;
+    text-align: center; }
+h1{
+    text-align: center;
 }
 </style>
