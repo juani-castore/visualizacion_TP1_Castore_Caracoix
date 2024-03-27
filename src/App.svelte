@@ -52,16 +52,16 @@
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-gap: 0.1px;
-  grid-auto-rows: minmax(1, auto);
-  max-width: 75%;
+  grid-template-columns: repeat(10, 0.05fr);
+  grid-gap: 0.01px;
+  grid-auto-rows: minmax(0.05, auto);
+  max-width: 100%;
   width: 100%;
-  max-height: 100vh;
+  max-height: 90vh;
   margin: 0 auto;
 }
 img{
-    height: 75px;
-    width: 75px;
+    height: 50px;
+    width: 50px;
 }
 </style>
