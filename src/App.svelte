@@ -1,7 +1,6 @@
 <!-- Script JS -->
 <script>
     var x = 0;
-    // comente esto porque me arruinaba la vida
     var images = []
 
     function updateImages(){
@@ -31,8 +30,8 @@
 <!-- Estructura contenido HTML -->
 <!-- cantidad de tiempo de vida de la zanahoria o x% zanahorias podridas doenfjwebfjbweflkdflsdn -->
 <div class="header">
-<h1>Cantidad de zanahorias podridas que se encuentran en stock</h1>
-<h2>Ingrese el porcentaje de zanahorias podridas:</h2>
+<h1>Zanahorias podridas</h1>
+<h2>Ingrese el porcentaje de zanahorias podridas en stock:</h2>
 <input type="number" bind:value={x} on:input={updateImages}>
 </div>
 <div class="container">
@@ -50,6 +49,14 @@ input{
     border-radius: 5px;
     border: 1px solid #ccc; 
     font-size: 16px;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 .header{
     display: flex;
@@ -59,23 +66,38 @@ input{
     padding: 30px   20px ;
     width: 1000px;
     margin:auto;
+    background-color: aqua;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     height: 60vh; /* El contenedor ocupa el 100% del viewport en altura */
+    width: 100%; /* El contenedor ocupa el 100% del viewport en anchura */
+    margin: 0 auto; /* Centramos el contenedor */
+    padding: 10px; /* Añadimos un padding para separar el contenido del borde */
+    box-sizing: border-box; /* Hacemos que el padding no afecte al tamaño final del contenedor */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+
 }
 .grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 0.01px;
-  grid-auto-rows: minmax(2, auto);
-  max-height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0.01px;
+    grid-auto-rows: minmax(2, auto);
+    max-height: 90vh;
     overflow: auto;
     padding: 10px;  
     border-radius: 10px;
-    background-color: #f0f0f0;
+    background-color: #f48609;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
 }
