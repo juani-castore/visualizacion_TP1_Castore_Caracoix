@@ -53,7 +53,7 @@ input{
     width: 100px;
     text-align: center;
     margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 0px;
     background-color: #f0f0f0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -66,7 +66,7 @@ input{
     padding: 30px   20px ;
     width: 1000px;
     margin:auto;
-    background-color: aqua;
+    background-color: white;
     border-radius: 50px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
@@ -83,7 +83,6 @@ input{
     box-sizing: border-box; /* Hacemos que el padding no afecte al tamaño final del contenedor */
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
     margin-bottom: 20px;
 
@@ -106,9 +105,10 @@ img{
     width: 100px;;
 }
 h2{
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     text-align: center; }
 h1{
+    padding-bottom: 20px;
     text-align: center;
 }
 </style>
